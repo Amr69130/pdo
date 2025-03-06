@@ -1,4 +1,6 @@
 <?php
+
+
 function connectDB(): PDO
 {
     $host = 'localhost';
@@ -15,6 +17,8 @@ function connectDB(): PDO
         $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
         return $pdo;
+
+
 
     } catch (Exception $e) {
         echo ("Erreur de connexion a la base de données. connectDB()");
