@@ -29,8 +29,8 @@ foreach ($cars as $car): ?>
             <p> <?php
             echo $car["horsePower"]
                 ?>chevaux</p>
-            <a href="update.php?id=<?php
-            $car["id"]
+            <a href="update.php?id=<?php echo
+                $car["id"]
                 ?>" class="btn btn-primary">Modifier</a>
         </ul>
     </div>

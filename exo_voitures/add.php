@@ -31,13 +31,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ":horsePower" => $_POST['horsePower'],
             ":image" => $_POST['image'],
         ]);
+
+        header("location: index.php");
     }
 
-    header("location: index.php");
 }
 ?>
 
-
+<?php
+require_once('header.php')
+    ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
