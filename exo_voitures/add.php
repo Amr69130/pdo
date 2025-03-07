@@ -32,6 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ":image" => $_POST['image'],
         ]);
     }
+
+    header("location: index.php");
 }
 ?>
 

@@ -8,7 +8,12 @@ $requete = $pdo->prepare("SELECT * FROM car;");
 $requete->execute();
 $cars = $requete->fetchAll();
 
-include_once('header.php');
+include_once('header.php'); ?>
+
+<div>
+    <a href="add.php">Ajouter une voiture</a>
+</div>
+<?php
 
 
 foreach ($cars as $car): ?>
@@ -30,9 +35,6 @@ foreach ($cars as $car): ?>
         </ul>
     </div>
 <?php endforeach; ?>
-<div>
-    <a href="add.php">Ajouter une voiture</a>
-</div>
 <?php
 
 include('footer.php')
