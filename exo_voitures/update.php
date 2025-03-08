@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php
 require_once('header.php');
+var_dump($_GET);
 
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +56,7 @@ require_once('header.php');
 
         <div class="mb-3">
             <label for="brand" class="form-label">Marque</label>
-            <input type="text" class="form-control" name="brand" id="brand" placeholder="Ex: Toyota">
+            <input type="text" class="form-control" name="brand" id="brand" value="<?= $_GET['brand'] ?>">
             <?php if (isset($errors['brand'])): ?>
                 <p class="text-danger"><?= $errors['brand'] ?></p>
                 <?php
@@ -68,7 +69,7 @@ require_once('header.php');
 
         <div class="mb-3">
             <label for="model" class="form-label">Modèle</label>
-            <input type="text" class="form-control" name="model" id="model" placeholder="Ex: Corolla">
+            <input type="text" class="form-control" name="model" id="model" value="<?= $_GET['model'] ?>">
             <?php if (isset($errors['model'])): ?>
                 <p class="text-danger"><?= $errors['model'] ?></p>
                 <?php
@@ -78,7 +79,8 @@ require_once('header.php');
         </div>
         <div class="mb-3">
             <label for="horsePower" class="form-label">Nombre de chevaux</label>
-            <input type="text" class="form-control" name="horsePower" id="horsePower" placeholder="Ex: 150">
+            <input type="text" class="form-control" name="horsePower" id="horsePower"
+                value="<?= $_GET['horsePower'] ?>">
             <?php if (isset($errors['horsePower'])): ?>
                 <p class="text-danger"><?= $errors['horsePower'] ?></p>
                 <?php
@@ -88,7 +90,7 @@ require_once('header.php');
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image du véhicule</label>
-            <input type="text" class="form-control" name="image" id="image" placeholder="">
+            <input type="text" class="form-control" name="image" id="image" value="<?= $_GET['image'] ?>">
             <?php if (isset($errors['image'])): ?>
                 <p class="text-danger"><?= $errors['image'] ?></p>
                 <?php

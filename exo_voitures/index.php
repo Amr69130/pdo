@@ -16,6 +16,7 @@ include_once('header.php'); ?>
 <?php
 
 
+
 foreach ($cars as $car): ?>
 
     <div>
@@ -29,13 +30,17 @@ foreach ($cars as $car): ?>
             <p> <?php
             echo $car["horsePower"]
                 ?>chevaux</p>
-            <a href="update.php?id=<?php echo
-                $car["id"]
-                ?>" class="btn btn-primary">Modifier</a>
+            <a href="update.php?id=<?php echo $car['id']; ?>&brand=<?php echo urlencode($car['brand']); ?>&model=<?php echo urlencode($car['model']); ?>"
+                class="btn btn-primary">Modifier</a>
+
+            <?php
+
+
+            ?>
+
         </ul>
     </div>
 <?php endforeach; ?>
 <?php
-
 include('footer.php')
     ?>
