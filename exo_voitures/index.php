@@ -11,7 +11,7 @@ $cars = $requete->fetchAll();
 include_once('header.php'); ?>
 
 <div>
-    <a href="add.php">Ajouter une voiture</a>
+    <a href="add.php" class="btn btn-primary">Ajouter une voiture</a>
 </div>
 <?php
 
@@ -30,8 +30,9 @@ foreach ($cars as $car): ?>
             <p> <?php
             echo $car["horsePower"]
                 ?>chevaux</p>
-            <a href="update.php?id=<?php echo $car['id']; ?>&brand=<?php echo urlencode($car['brand']); ?>&model=<?php echo urlencode($car['model']); ?>"
-                class="btn btn-primary">Modifier</a>
+            <a href="update.php?id=<?= $car['id']; ?>&brand=<?= $car['brand']; ?>&model=<?= $car['model']; ?>&horsePower= <?= $car['horsePower'] ?>&image= <?php
+                    $car['image']
+                        ?>" class="btn btn-primary">Modifier</a>
 
             <?php
 
