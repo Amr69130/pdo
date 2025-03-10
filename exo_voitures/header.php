@@ -22,6 +22,8 @@ $pdo = connectDB();
             </li>
             <li><a href="add.php">AJOUT DE VOITURE</a>
             </li>
+            <li><a href="login.php">CONNEXION</a>
+            </li>
         </ul>
     </nav>
     <h1>LES VOITURES DE GAETAN</h1>
