@@ -31,19 +31,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ":id" => $car['id']
         ]
     );
-
+    header('location: index.php');
 }
-
 
 ?>
 
 <?php
 include('header.php');
 ?>
-<form action="POST" action="delete.php?id=<?= $_GET['id'] ?>">
+
+
+<form method="POST" action="delete.php?id=<?= $_GET['id'] ?>">
     <button class="btn btn-danger">SUPPRIMER</button>
     <button class="btn btn-secondary" formaction="index.php">ANNULER</button>
 </form>
+
+
 <?php
 include('footer.php');
 ?>

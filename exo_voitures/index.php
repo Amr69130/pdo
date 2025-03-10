@@ -31,9 +31,8 @@ foreach ($cars as $car): ?>
             echo $car["horsePower"]
                 ?>chevaux</p>
             <a href="update.php?id=<?= $car['id']; ?>" class="btn btn-primary">Modifier</a>
-            <a href="delete.php?id=<?= $car['id']; ?>&brand=<?= $car['brand']; ?>&model=<?= $car['model']; ?>&horsePower= <?= $car['horsePower'] ?>&image= <?php
-                    $car['image']
-                        ?>" class="btn btn-danger">Supprimer</a>
+            <a href="delete.php?id=<?= $car['id'];
+            ?>" class="btn btn-danger">Supprimer</a>
 
             <?php
 
