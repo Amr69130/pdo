@@ -1,11 +1,13 @@
 <?php
 require('connectDB.php');
 $pdo = connectDB();
+session_start();
 
+var_dump($_SESSION)
 
-// $pass = password_hash("admin", PASSWORD_DEFAULT);
+    // $pass = password_hash("admin", PASSWORD_DEFAULT);
 // var_dump($pass)
-?>
+    ?>
 
 <?php
 $errors = [];
@@ -33,15 +35,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $user = $request->fetch();
         //verif  si resultat
-        var_dump($user);
-        if ($user === true) {
-            if (password_verify($_POST["password"], $user["password"])) {
-                echo ('USER OU MDP INEXISTANT !! CONNARD !!!');
+        // var_dump($user);
+        if ($user === false) {
+            echo ('USER OU MDP INEXISTANT !! ');
+        } else {
+            if (password_verify($_POST["password"], $user["password"]) === false) {
 
+                echo ('USER OU MDP INEXISTANT !! ');
+            } else {
+                // echo ('ok connecté');
+
+
+                $_SESSION["username"] = $user["username"];
+                header('Location: admin.php');
             }
-            ;
         }
-        echo ('USER OU MDP INEXISTANT !! CONNARD !!!');
+
+
 
     }
 

@@ -24,6 +24,8 @@ $pdo = connectDB();
             </li>
             <li><a href="login.php">CONNEXION</a>
             </li>
+            <li><a href="logout.php">DECONNEXION</a>
+            </li>
         </ul>
     </nav>
     <h1>LES VOITURES DE GAETAN</h1>

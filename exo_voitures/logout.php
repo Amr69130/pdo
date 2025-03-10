@@ -1,4 +1,4 @@
 <?php
-$pdo = connectDB();
-
+session_start();
+session_destroy();
 ?>
